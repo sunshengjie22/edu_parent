@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>service</artifactId>
+        <groupId>com.ssj</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service_edu</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <resources>
+            <!--        手动指定java文件夹为resources文件夹-->
+            <!--        当xml文件在java文件夹而不在resources文件夹时，该xml文件不能被编译进target目录，-->
+            <!--        又因为代码在执行时是执行的target中编译过的文件，所以加载不到该xml文件。因此必须进行指定。-->
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <!--                    指定java文件夹下子包中的所有.xml文件-->
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+
+            <!--            上述的指定是将原有的编译资源resources目录覆盖掉了，而不是添加编译目录，因此需要补充原有的编译资源目录-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+
+</project>

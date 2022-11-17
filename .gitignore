@@ -1,0 +1,6 @@
+# Project exclude paths
+/common/common_utils/target/
+/common/service_base/target/
+/service/service_edu/target/
+/service/service_oss/target/
+/service/service_vod/target/
